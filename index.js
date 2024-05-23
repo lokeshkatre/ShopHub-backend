@@ -9,6 +9,7 @@ const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
 const bcrypt = require('bcryptjs');
+const { BASE_URL } = require("../admin/src/utils/utils");
 
 const app = express();
 const port = process.env.PORT||4000; // Use environment variable or fallback to 4000
@@ -60,7 +61,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
     }
     res.json({
         success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
+        image_url: `${BASE_URL}/images/${req.file.filename}`
     });
 });
 
