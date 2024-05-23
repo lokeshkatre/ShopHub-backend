@@ -11,7 +11,7 @@ const fs = require("fs");
 const bcrypt = require('bcryptjs');
 
 const app = express();
-const port = process.env.PORT || 4000; // Use environment variable or fallback to 4000
+const port = process.env.PORT||4000; // Use environment variable or fallback to 4000
 
 app.use(express.json());
 app.use(cors());
